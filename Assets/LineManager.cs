@@ -31,7 +31,7 @@ public class LineManager : MonoBehaviour {
 		}
 	}
 
-	void RemovePair(Node node)
+	public void RemovePair(Node node)
 	{
 		if(_pairs.Contains(node))
 		{
@@ -59,7 +59,7 @@ public class LineManager : MonoBehaviour {
 
 			return true;
 		}
-		print ("not crosed");
+
 		return false; 
 	}
 
@@ -80,14 +80,19 @@ public class LineManager : MonoBehaviour {
 	{
 
 		bool shouldBreak = false; 
+		List<Node> remove = new List<Node> ();
 		foreach(Node node in _pairs){
 			Line testLine = getNodesLine(node);
 			if(linesCrossed(mainLine, testLine)){
 				node.BreakLine();
 				shouldBreak = true;
-				print ("break");
+				remove.Add(node);
 
 			}
+		}
+		foreach(Node node in remove){
+			RemovePair(node);
+
 		}
 		return shouldBreak;
 	}

@@ -91,12 +91,13 @@ public class Node : MonoBehaviour
 		if (!_dragging && !Matched)
 			return;
 
-		//if (Matched) 
+		if (Matched) 
 		{
 			foreach (RaycastHit2D cldObject in _hitInfo) 
 			{
 					if (cldObject.collider != this.transform.collider2D &&
-							cldObject.collider != PartnerNode.transform.collider2D) {
+					    cldObject.collider != PartnerNode.transform.collider2D) {
+							LineManager.Instance.RemovePair (this);
 							Matched = false;
 							_hitInfo = null;
 							_dragging = false;
@@ -114,7 +115,7 @@ public class Node : MonoBehaviour
 
 	public void BreakLine()
 	{
-		
+
 		_lineColor = LineColorBreak;
 		PartnerNode._lineColor = LineColorBreak;
 		Matched = false;
