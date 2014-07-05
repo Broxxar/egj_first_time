@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 public class LineManager : MonoBehaviour {
 
@@ -20,9 +21,63 @@ public class LineManager : MonoBehaviour {
 		
 		private set { }
 	}
-
+	InputManager _inputManager;
 	List<Node> _pairs = new List<Node>();
 
+
+
+	void Awake()
+	{
+		_inputManager = InputManager.Instance;
+		_inputManager.GlobalDownAction += OnGlobalDownAction;
+	}
+
+	void OnGlobalDownAction (Vector3 position)
+	{
+
+		foreach(Node node in _pairs)
+		{
+			Line testLine = getNodesLine(node);
+			Vector3 spot = mouseIntersectedAt (position, testLine);
+
+		}
+	}
+
+	Vector3 mouseIntersectedAt(Vector3 mousePos, Line line)
+	{	
+		Vector2 point1 = line.StartPos;
+		Vector2 point2 = line.EndPos;
+		float dx, dy, A, B, C, det, t;
+		float radius = .3f;
+
+		dx = point2.x - point1.x;
+		dy = point2.y - point1.y;
+
+		A = dx * dx + dy * dy;
+		B = 2 * (dx * (point1.x - mousePos.x) + dy * (point1.y - mousePos.y));
+		C = (point1.x - mousePos.x) * (point1.x - mousePos.x) + (point1.y - mousePos.y) * (point1.y - mousePos.y) - radius * radius;
+		
+		det = B * B - 4 * A * C;
+		if ((A <= 0.0000001) || (det < 0))
+		{
+			return Vector3.zero;
+		}
+		else if (det == 0)
+		{
+			// One solution.
+			t = -B / (2 * A);
+			return new Vector3(point1.x + t * dx, point1.y + t * dy, 0);
+
+		}
+		else
+		{
+			// Two solutions.
+			t = (float)((-B + Math.Sqrt(det)) / (2 * A));
+			return new Vector3(point1.x + t * dx, point1.y + t * dy,0);
+
+		}
+	}
+	
 	public void AddPair(Node node)
 	{
 		if (!(_pairs.Contains (node) || _pairs.Contains (node.PartnerNode)))
@@ -30,7 +85,8 @@ public class LineManager : MonoBehaviour {
 			_pairs.Add (node);
 		}
 	}
-
+	
+	
 	public void RemovePair(Node node)
 	{
 		if(_pairs.Contains(node))
