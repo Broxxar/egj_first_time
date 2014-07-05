@@ -39,6 +39,7 @@ public class Node : MonoBehaviour
 			{
 				_lineEnd.position = PartnerNode.transform.position;
 				this.Matched = true;
+				LineManager.Instance.AddPair(this);
 				PartnerNode.Matched = true;
 			}
 			_dragging = false;
@@ -89,17 +90,35 @@ public class Node : MonoBehaviour
 		if (!_dragging && !Matched)
 			return;
 
-		foreach( RaycastHit2D cldObject in _hitInfo)
+		//if (Matched) 
 		{
-			if(cldObject.collider != this.transform.collider2D &&
-			   cldObject.collider != PartnerNode.transform.collider2D)
+			foreach (RaycastHit2D cldObject in _hitInfo) 
 			{
-				Matched = false;
-				_hitInfo = null;
-				_dragging = false;
-				_lineColor = LineColorBreak;
+					if (cldObject.collider != this.transform.collider2D &&
+							cldObject.collider != PartnerNode.transform.collider2D) {
+							Matched = false;
+							_hitInfo = null;
+							_dragging = false;
+							_lineColor = LineColorBreak;
+					}
 			}
+		} 
+		if (_dragging) {
+			Vector2 lineStart = new Vector2(transform.position.x, transform.position.y);
+			Vector2 lineEnd = new Vector2(_lineEnd.position.x, _lineEnd.position.y);
+			Line drag = new Line(lineStart, lineEnd);
+			LineManager.Instance.ShouldLineBreak(drag);
 		}
+	}
+
+	public void BreakLine()
+	{
+		
+		_lineColor = LineColorBreak;
+		PartnerNode._lineColor = LineColorBreak;
+		Matched = false;
+		PartnerNode.Matched = false;
+		_dragging = false;
 	}
 
 	void Update ()

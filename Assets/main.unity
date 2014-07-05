@@ -992,6 +992,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 917367587}
   - 114: {fileID: 917367586}
+  - 114: {fileID: 917367588}
   m_Layer: 0
   m_Name: singletons
   m_TagString: Untagged
@@ -1022,6 +1023,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!114 &917367588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 917367585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f58a7acae19c541418a3b869f3a71732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &946769567
 GameObject:
   m_ObjectHideFlags: 0
