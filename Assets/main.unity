@@ -258,6 +258,7 @@ MonoBehaviour:
   LineColorDefault: {r: .330882311, g: .380082041, b: 1, a: 1}
   LineColorBreak: {r: 1, g: 0, b: 0, a: 1}
   LineColorSmoothingFactor: 5
+  LineZDepth: .100000001
 --- !u!58 &112913744
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -443,6 +444,7 @@ MonoBehaviour:
   LineColorDefault: {r: .330882311, g: .380082041, b: 1, a: 1}
   LineColorBreak: {r: 1, g: 0, b: 0, a: 1}
   LineColorSmoothingFactor: 5
+  LineZDepth: .100000001
 --- !u!58 &212224415
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -851,6 +853,7 @@ MonoBehaviour:
   LineColorDefault: {r: .330882311, g: .380082041, b: 1, a: 1}
   LineColorBreak: {r: 1, g: 0, b: 0, a: 1}
   LineColorSmoothingFactor: 5
+  LineZDepth: .100000001
 --- !u!58 &715128180
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1245,6 +1248,7 @@ MonoBehaviour:
   LineColorDefault: {r: .330882311, g: .380082041, b: 1, a: 1}
   LineColorBreak: {r: 1, g: 0, b: 0, a: 1}
   LineColorSmoothingFactor: 5
+  LineZDepth: .100000001
 --- !u!58 &1497549979
 CircleCollider2D:
   m_ObjectHideFlags: 0
