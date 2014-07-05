@@ -112,6 +112,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartPostion: {x: 0, y: 0, z: 0}
   EndPosition: {x: 0, y: 0, z: 0}
+  XPositionCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  YPositionCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  UseCurves: 0
+  RoundTripTime: 6
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -136,7 +148,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Matched: 0
   PartnerNode: {fileID: 0}
-  ClockSprite: {fileID: 0}
   LineWidthMatched: .300000012
   LineWidthDragging: .150000006
   LineWidthSmoothingFactor: 10

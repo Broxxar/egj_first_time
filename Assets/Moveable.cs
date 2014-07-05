@@ -8,10 +8,11 @@ public class Moveable : MonoBehaviour
 	public AnimationCurve XPositionCurve;
 	public AnimationCurve YPositionCurve;
 	public bool UseCurves;
+	public float RoundTripTime;
 
 	void Update ()
 	{
-		float cosTime = Mathf.Cos(Time.time + Mathf.PI);
+		float cosTime = Mathf.Cos((Time.time * Mathf.PI * 2) / RoundTripTime + Mathf.PI);
 		cosTime = (1 + cosTime)/2;
 
 		if (UseCurves)

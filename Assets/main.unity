@@ -241,6 +241,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
   UseCurves: 0
+  RoundTripTime: 6
 --- !u!114 &112913742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -493,6 +494,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
   UseCurves: 1
+  RoundTripTime: 6
 --- !u!114 &212224413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1057,6 +1059,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
   UseCurves: 0
+  RoundTripTime: 6
 --- !u!114 &715128178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1852,6 +1855,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
   UseCurves: 0
+  RoundTripTime: 6
 --- !u!114 &1497549977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2732,6 +2736,10 @@ Prefab:
     - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
       propertyPath: YPositionCurve.m_Curve.Array.data[2].tangentMode
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
+      propertyPath: SinPeriod
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
