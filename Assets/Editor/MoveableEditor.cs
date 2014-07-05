@@ -38,7 +38,7 @@ public class MoveableEditor : Editor
 			moveable.ShowStartPosition();
 			EditorUtility.SetDirty(moveable);
 		}
-		
+
 		if (GUILayout.Button("Show End"))
 		{
 			moveable.ShowEndPosition();
