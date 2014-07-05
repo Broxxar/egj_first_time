@@ -3,20 +3,24 @@ using System.Collections;
 
 public class Node : MonoBehaviour
 {
+	public bool Matched;
+	public Node PartnerNode; 
+	public float LineWidthMatched;
+	public float LineWidthDragging;
+	public float LineWidthSmoothingFactor;
+	public Color LineColorDefault;
+	public Color LineColorBreak;
+	public float LineColorSmoothingFactor;
+
 	InputManager _inputManager;
 	bool _dragging;
 	LineRenderer _lineRenderer;
 	RaycastHit2D[] _hitInfo;
 	Transform _lineEnd;
-	bool _matched;
-	public bool Matched
-	{
-		get{ return _matched;}
-		set{_matched = value;}
-	}
+	float _lineWidth;
+	float _targetLineWidth;
+	Color _lineColor;
 		
-	public Node PartnerNode; 
-
 	void Awake ()
 	{
 		_inputManager = InputManager.Instance;
@@ -33,14 +37,11 @@ public class Node : MonoBehaviour
 		{
 			if (Physics2D.OverlapPoint (position) == (PartnerNode.collider2D))
 			{
-
 				_lineEnd.position = PartnerNode.transform.position;
 				this.Matched = true;
-				print (_matched);
 				PartnerNode.Matched = true;
 			}
 			_dragging = false;
-			//TODO: Check to see if we released on the correct node
 		}
 	}
 
@@ -51,16 +52,18 @@ public class Node : MonoBehaviour
 		}
 	}
 
-
-	
 	void UpdateLine ()
 	{
-		//TODO: Fix z depths, so that these lines don't appear over top of stuff
+		_lineWidth = Mathf.Lerp(_lineWidth, _targetLineWidth, Time.deltaTime * LineWidthSmoothingFactor);
+		_lineRenderer.SetWidth(_lineWidth, _lineWidth);
 
+		_lineColor = Color.Lerp(_lineColor, LineColorDefault, Time.deltaTime * LineColorSmoothingFactor);
+		_lineRenderer.SetColors(_lineColor, _lineColor);
 
 		if (this.Matched)
 		{
 			_lineEnd.position = PartnerNode.transform.position;
+			_targetLineWidth = LineWidthMatched;
 		}
 		_lineRenderer.SetPosition(0, transform.position);
 		_lineRenderer.SetPosition(1, _lineEnd.position);
@@ -72,27 +75,29 @@ public class Node : MonoBehaviour
 	{
 		if (_dragging)
 		{
-			//TODO: 2D Linecast to make sure we haven't hit anything with the line
 			_lineEnd.position = _inputManager.MouseWorldPosition;
+			_targetLineWidth = LineWidthDragging;
 		}
-		else if(!_matched)
+		else if(!Matched)
 		{
-			//TODO: Replace the 10 here with a smoothingfactor variable, or just make lines disappear
-			// ooh ooh or make them thin out into nothingness. yeah let's do that maybe!
-			_lineEnd.position = Vector3.Lerp(_lineEnd.position, transform.position, Time.deltaTime * 10);
+			_targetLineWidth = 0;
 		}
 	}
 
 	void CheckLineIntact ()
 	{
+		if (!_dragging && !Matched)
+			return;
+
 		foreach( RaycastHit2D cldObject in _hitInfo)
 		{
 			if(cldObject.collider != this.transform.collider2D &&
 			   cldObject.collider != PartnerNode.transform.collider2D)
 			{
-				_lineEnd.position = this.transform.position;
-				this.Matched = false;
+				Matched = false;
 				_hitInfo = null;
+				_dragging = false;
+				_lineColor = LineColorBreak;
 			}
 		}
 	}

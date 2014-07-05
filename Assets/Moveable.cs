@@ -9,9 +9,7 @@ public class Moveable : MonoBehaviour
 	void Update ()
 	{
 		float cosTime = Mathf.Cos(Time.time);
-
 		transform.position = Vector3.Lerp(StartPostion, EndPosition, (1 + cosTime)/2);
-
 	}
 
 	public void SetStartPosition ()

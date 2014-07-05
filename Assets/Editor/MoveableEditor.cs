@@ -18,11 +18,13 @@ public class MoveableEditor : Editor
 		if (GUILayout.Button("Set Start"))
 		{
 			moveable.SetStartPosition();
+			EditorUtility.SetDirty(moveable);
 		}
 
 		if (GUILayout.Button("Set End"))
 		{
 			moveable.SetEndPosition();
+			EditorUtility.SetDirty(moveable);
 		}
 
 		GUILayout.EndHorizontal();
@@ -34,11 +36,13 @@ public class MoveableEditor : Editor
 		if (GUILayout.Button("Show Start"))
 		{
 			moveable.ShowStartPosition();
+			EditorUtility.SetDirty(moveable);
 		}
 		
 		if (GUILayout.Button("Show End"))
 		{
 			moveable.ShowEndPosition();
+			EditorUtility.SetDirty(moveable);
 		}
 		
 		GUILayout.EndHorizontal();
