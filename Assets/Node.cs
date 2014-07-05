@@ -7,6 +7,8 @@ public class Node : MonoBehaviour
 	bool _dragging;
 	LineRenderer _lineRenderer;
 	Transform _lineEnd;
+	bool _matched;
+	public Node PartnerNode; 
 
 	void Awake ()
 	{
@@ -20,8 +22,12 @@ public class Node : MonoBehaviour
 
 	void OnGlobalUpAction (Vector3 position)
 	{
-		if (_dragging)
+		if (_dragging )
 		{
+			if (Physics2D.OverlapPoint (position) == (PartnerNode.collider2D))
+			{
+				_matched = true;
+			}
 			_dragging = false;
 			//TODO: Check to see if we released on the correct node
 		}
@@ -29,8 +35,12 @@ public class Node : MonoBehaviour
 
 	void OnDownAction (Vector3 position)
 	{
-		_dragging = true;
+		if (!_matched) {
+			_dragging = true;
+		}
 	}
+
+
 	
 	void UpdateLineRenderer ()
 	{
@@ -46,7 +56,7 @@ public class Node : MonoBehaviour
 			//TODO: 2D Linecast to make sure we haven't hit anything with the line
 			_lineEnd.position = _inputManager.MouseWorldPosition;
 		}
-		else
+		else if(!_matched)
 		{
 			//TODO: Replace the 10 here with a smoothingfactor variable, or just make lines disappear
 			// ooh ooh or make them thin out into nothingness. yeah let's do that maybe!
