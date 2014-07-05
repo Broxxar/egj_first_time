@@ -22,36 +22,38 @@ public class InputManager : MonoBehaviour
 		private set { }
 	}
 
+	public Vector2 MouseWorldPosition {get; private set;}
+
 	void Update ()
 	{
+		MouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
 		if (Input.GetMouseButtonDown(0))
 		{
-			Vector2 worldPosition = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
-			Collider2D collider = Physics2D.OverlapPoint(worldPosition);
-			GlobalDownAction(worldPosition);
+			Collider2D collider = Physics2D.OverlapPoint(MouseWorldPosition);
+			GlobalDownAction(MouseWorldPosition);
 
 			if (collider != null)
 			{
 				Clickable clickable = collider.GetComponent<Clickable>();
 				if (clickable != null)
 				{
-					clickable.FireEvent(MouseEventType.Down, worldPosition);
+					clickable.FireEvent(MouseEventType.Down, MouseWorldPosition);
 				}
 			}
 		}
 
 		else if (Input.GetMouseButtonUp(0))
 		{
-			Vector2 worldPosition = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
-			Collider2D collider = Physics2D.OverlapPoint(worldPosition);
-			GlobalUpAction(worldPosition);
+			Collider2D collider = Physics2D.OverlapPoint(MouseWorldPosition);
+			GlobalUpAction(MouseWorldPosition);
 			
 			if (collider != null)
 			{
 				Clickable clickable = collider.GetComponent<Clickable>();	
 				if (clickable != null)
 				{
-					clickable.FireEvent(MouseEventType.Up, worldPosition);
+					clickable.FireEvent(MouseEventType.Up, MouseWorldPosition);
 				}
 			}
 		}
