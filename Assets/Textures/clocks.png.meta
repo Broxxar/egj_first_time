@@ -1,0 +1,136 @@
+fileFormatVersion: 2
+guid: 3c3fcc04a43244b40897f655a7248253
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 5
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: clock_1
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 323
+        width: 166
+        height: 166
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hour_1
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 460
+        width: 11
+        height: 41
+      alignment: 9
+      pivot: {x: .5, y: .100000001}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: minute_2
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 395
+        width: 5
+        height: 82
+      alignment: 9
+      pivot: {x: .5, y: .0399999991}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: minute_1
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 402
+        width: 5
+        height: 53
+      alignment: 9
+      pivot: {x: .5, y: .0900000036}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: clock_2
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 322
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hour_2
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 396
+        width: 10
+        height: 51
+      alignment: 9
+      pivot: {x: .5, y: .0700000003}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: clock_3
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 152
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: minute_3
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 237
+        width: 21
+        height: 70
+      alignment: 9
+      pivot: {x: .364137918, y: .0850686207}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hour_3
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 194
+        width: 15
+        height: 33
+      alignment: 9
+      pivot: {x: .487179577, y: .214465052}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
