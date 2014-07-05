@@ -6,8 +6,15 @@ public class Node : MonoBehaviour
 	InputManager _inputManager;
 	bool _dragging;
 	LineRenderer _lineRenderer;
+	RaycastHit2D[] _hitInfo;
 	Transform _lineEnd;
 	bool _matched;
+	public bool Matched
+	{
+		get{ return _matched;}
+		set{_matched = value;}
+	}
+		
 	public Node PartnerNode; 
 
 	void Awake ()
@@ -26,7 +33,11 @@ public class Node : MonoBehaviour
 		{
 			if (Physics2D.OverlapPoint (position) == (PartnerNode.collider2D))
 			{
-				_matched = true;
+
+				_lineEnd.position = PartnerNode.transform.position;
+				this.Matched = true;
+				print (_matched);
+				PartnerNode.Matched = true;
 			}
 			_dragging = false;
 			//TODO: Check to see if we released on the correct node
@@ -35,18 +46,26 @@ public class Node : MonoBehaviour
 
 	void OnDownAction (Vector3 position)
 	{
-		if (!_matched) {
+		if (!this.Matched) {
 			_dragging = true;
 		}
 	}
 
 
 	
-	void UpdateLineRenderer ()
+	void UpdateLine ()
 	{
 		//TODO: Fix z depths, so that these lines don't appear over top of stuff
+
+
+		if (this.Matched)
+		{
+			_lineEnd.position = PartnerNode.transform.position;
+		}
 		_lineRenderer.SetPosition(0, transform.position);
 		_lineRenderer.SetPosition(1, _lineEnd.position);
+		_hitInfo = Physics2D.LinecastAll(transform.position, _lineEnd.position);
+
 	}
 	
 	void UpdateDragging ()
@@ -64,10 +83,25 @@ public class Node : MonoBehaviour
 		}
 	}
 
+	void CheckLineIntact ()
+	{
+		foreach( RaycastHit2D cldObject in _hitInfo)
+		{
+			if(cldObject.collider != this.transform.collider2D &&
+			   cldObject.collider != PartnerNode.transform.collider2D)
+			{
+				_lineEnd.position = this.transform.position;
+				this.Matched = false;
+				_hitInfo = null;
+			}
+		}
+	}
+
 	void Update ()
 	{
 		UpdateDragging();
-		UpdateLineRenderer();
+		UpdateLine();
+		CheckLineIntact ();
 	}
 }
 
