@@ -4,7 +4,7 @@ using System.Collections;
 public class Node : MonoBehaviour
 {
 	public bool Matched;
-	public Node PartnerNode; 
+	public Node PartnerNode;
 	public float LineWidthMatched;
 	public float LineWidthDragging;
 	public float LineWidthSmoothingFactor;
