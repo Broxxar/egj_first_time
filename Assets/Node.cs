@@ -11,6 +11,7 @@ public class Node : MonoBehaviour
 	public Color LineColorDefault;
 	public Color LineColorBreak;
 	public float LineColorSmoothingFactor;
+	public float LineZDepth;
 
 	InputManager _inputManager;
 	bool _dragging;
@@ -66,8 +67,8 @@ public class Node : MonoBehaviour
 			_lineEnd.position = PartnerNode.transform.position;
 			_targetLineWidth = LineWidthMatched;
 		}
-		_lineRenderer.SetPosition(0, transform.position);
-		_lineRenderer.SetPosition(1, _lineEnd.position);
+		_lineRenderer.SetPosition(0, new Vector3(transform.position.x, transform.position.y, transform.position.z + LineZDepth));
+		_lineRenderer.SetPosition(1, new Vector3(_lineEnd.position.x, _lineEnd.position.y, _lineEnd.position.z + LineZDepth));
 		_hitInfo = Physics2D.LinecastAll(transform.position, _lineEnd.position);
 
 	}
