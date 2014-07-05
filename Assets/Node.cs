@@ -91,7 +91,7 @@ public class Node : MonoBehaviour
 		if (!_dragging && !Matched)
 			return;
 
-		if (Matched) 
+
 		{
 			foreach (RaycastHit2D cldObject in _hitInfo) 
 			{
