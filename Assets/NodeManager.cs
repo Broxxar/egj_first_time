@@ -41,11 +41,14 @@ public class NodeManager : MonoBehaviour {
 	
 	void OnGlobalUpAction (Vector3 position)
 	{
-
-		if (AllStiched ())
+		if (AllSticthed ())
 		{
-			BreakAll ();
-			print ("winner");
+			LevelController.Instance.NextLevel();
+			BreakAll (true);
+		}
+		else
+		{
+			BreakAll (false);
 		}
 	}
 	
@@ -108,12 +111,27 @@ public class NodeManager : MonoBehaviour {
 		return null;
 	}
 
-	public bool AllStiched()
+	public int NumStitched ()
+	{
+		int count = 0;
+
+		foreach (Clocks node in _clocks) 
+		{	
+			if(node.Stitched)
+			{
+				count++;
+			}
+		}
+
+		return count;
+	}
+
+	public bool AllSticthed()
 	{
 		int count = 0;
 		foreach (Clocks node in _clocks) 
 		{	
-			if(node.Stiched == false)
+			if(node.Stitched == false)
 			{
 				count++;
 			}
@@ -126,11 +144,15 @@ public class NodeManager : MonoBehaviour {
 		return true;
 	}
 
-	public void BreakAll()
+	public void BreakAll(bool win)
 	{
 		foreach (Clocks node in _clocks) 
 		{	
-			node.BreakLine();
+			if (!win && NumStitched() > 0)
+			{
+				CameraShaker.Instance.Shake();
+			}
+			node.BreakLine(win);
 		}
 	}
 }

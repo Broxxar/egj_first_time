@@ -1,9 +1,9 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Clocks : MonoBehaviour {
 	
-	public bool Stiched;
+	public bool Stitched;
 	public bool Dragging;
 	public Clocks PartnerNode;
 	public float LineWidthMatched;
@@ -11,6 +11,7 @@ public class Clocks : MonoBehaviour {
 	public float LineWidthSmoothingFactor;
 	public Color LineColorDefault;
 	public Color LineColorBreak;
+	public Color LineColorWin;
 	public float LineColorSmoothingFactor;
 	public float LineZDepth;
 	
@@ -32,24 +33,13 @@ public class Clocks : MonoBehaviour {
 		
 		_nodeManager.AddNode (this);
 		GetComponent<Clickable>().DownAction += OnDownAction;
-		_inputManager.GlobalUpAction += OnGlobalUpAction;
 		_lineRenderer = transform.FindChild("line_renderer").GetComponent<LineRenderer>();
 		_lineEnd = transform.FindChild("line_end");
 	}
 	
-	void OnGlobalUpAction (Vector3 position)
-	{
-			Dragging = false;
-			if (!_nodeManager.AllStiched ()) {
-
-				_nodeManager.BreakAll ();
-			}
-	}
-
-	
 	void OnDownAction (Vector3 position)
 	{
-		if (!this.Stiched) {
+		if (!this.Stitched) {
 			Dragging = true;
 		}
 	}
@@ -63,7 +53,7 @@ public class Clocks : MonoBehaviour {
 		_lineRenderer.SetColors(_lineColor, _lineColor);
 		
 		
-		if (this.Stiched)
+		if (this.Stitched)
 		{
 
 			_lineEnd.position = PartnerNode.transform.position;
@@ -80,10 +70,10 @@ public class Clocks : MonoBehaviour {
 		if (Dragging)
 		{
 			Clocks clock = _nodeManager.DifferentClockHit(this);
-			if(clock != null && clock.Stiched == false)
+			if(clock != null && clock.Stitched == false)
 			{
 				this.PartnerNode = clock;
-				this.Stiched = true;
+				this.Stitched = true;
 				this.PartnerNode.Dragging = true;
 				Dragging = false;
 				_lineManager.AddPair(this);
@@ -100,12 +90,12 @@ public class Clocks : MonoBehaviour {
 
 	void CheckLineIntact ()
 	{
-		if (!Dragging && !Stiched)
+		if (!Dragging && !Stitched)
 			return;
 
 		if(_hitInfo.Length >2){
 
-			_nodeManager.BreakAll();
+			_nodeManager.BreakAll(false);
 		
 		}
 		if (Dragging) {
@@ -116,18 +106,21 @@ public class Clocks : MonoBehaviour {
 		}
 	}
 
-	public void BreakLine()
+	public void BreakLine(bool win)
 	{
+		if (!win)
+			_lineColor = LineColorBreak;
+		else
+			_lineColor = LineColorWin;
 
-		_lineColor = LineColorBreak;
 		_targetLineWidth = 0;
 		PartnerNode = null;
-		Stiched = false;
+		Stitched = false;
 		Dragging = false;
 		_hitInfo = null;
 		_lineManager.RemovePair (this);
 	}
-	
+
 	void Update ()
 	{
 		UpdateDragging();
