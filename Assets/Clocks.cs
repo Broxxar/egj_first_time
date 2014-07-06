@@ -39,20 +39,13 @@ public class Clocks : MonoBehaviour {
 	
 	void OnGlobalUpAction (Vector3 position)
 	{
-		if (Dragging )
-		{
-			
-//			//IF you don't win break line and set nodes partners to null
-//			if (Physics2D.OverlapPoint (position) == (PartnerNode.collider2D))
-//			{
-//				_lineEnd.position = PartnerNode.transform.position;
-//				this.Stiched = true;
-//				_lineManager.AddPair(this);
-//				PartnerNode.Stiched = true;
-//			}
-//			Dragging = false;
-		}
+			Dragging = false;
+			if (!_nodeManager.AllStiched ()) {
+
+				_nodeManager.BreakAll ();
+			}
 	}
+
 	
 	void OnDownAction (Vector3 position)
 	{
@@ -68,7 +61,8 @@ public class Clocks : MonoBehaviour {
 		
 		_lineColor = Color.Lerp(_lineColor, LineColorDefault, Time.deltaTime * LineColorSmoothingFactor);
 		_lineRenderer.SetColors(_lineColor, _lineColor);
-
+		
+		
 		if (this.Stiched)
 		{
 
@@ -101,11 +95,7 @@ public class Clocks : MonoBehaviour {
 				_targetLineWidth = LineWidthDragging;
 			}
 		}
-		else if(!Stiched)
-		{
-			//if not win
-//			_nodeManager.BreakAll();//BreakLine();
-		}
+
 	}
 
 	void CheckLineIntact ()
