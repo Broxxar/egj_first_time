@@ -18,8 +18,8 @@ public class GridAnimation : MonoBehaviour
 
 	void Update ()
 	{
-		float sinTime = Mathf.Sin(Time.time / (Mathf.PI * 2));
-		Vector3 scale = new Vector3(1, 1, Mathf.Lerp(1, 3, (1 + sinTime)/2));
+		float cosTime = Mathf.Cos(Time.time / (Mathf.PI * 2));
+		Vector3 scale = new Vector3(1, 1, Mathf.Lerp(1, 4, (1 + cosTime)/2));
 		transform.localScale = scale;
 
 		_rotationVelocity = Vector3.Lerp(_rotationVelocity, _targetRotationVelcoity, Time.deltaTime * VelocitySmoothingFactor);
