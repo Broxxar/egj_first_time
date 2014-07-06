@@ -20,9 +20,17 @@ public class NodeManager : MonoBehaviour {
 		private set { }
 	}
 
+	InputManager _inputManager;
 	List<Clocks> _clocks = new List<Clocks>();
 	public Vector2 MouseWorldPosition {get; private set;}
-	
+
+	void Awake ()
+	{
+		_inputManager = InputManager.Instance;
+
+		_inputManager.GlobalUpAction += OnGlobalUpAction;
+	}
+
 	public void AddNode(Clocks node)
 	{
 		if (!(_clocks.Contains (node) || _clocks.Contains (node.PartnerNode)))
@@ -31,40 +39,17 @@ public class NodeManager : MonoBehaviour {
 		}
 	}
 
-	Vector3 mouseIntersectedAt(Vector3 mousePos, Line line)
-	{	
-		Vector2 point1 = line.StartPos;
-		Vector2 point2 = line.EndPos;
-		float dx, dy, A, B, C, det, t;
-		float radius = .3f;
-		
-		dx = point2.x - point1.x;
-		dy = point2.y - point1.y;
-		
-		A = dx * dx + dy * dy;
-		B = 2 * (dx * (point1.x - mousePos.x) + dy * (point1.y - mousePos.y));
-		C = (point1.x - mousePos.x) * (point1.x - mousePos.x) + (point1.y - mousePos.y) * (point1.y - mousePos.y) - radius * radius;
-		
-		det = B * B - 4 * A * C;
-		if ((A <= 0.0000001) || (det < 0))
-		{
-			return Vector3.zero;
-		}
-		else if (det == 0)
-		{
-			// One solution.
-			t = -B / (2 * A);
-			return new Vector3(point1.x + t * dx, point1.y + t * dy, 0);
+	
+	void OnGlobalUpAction (Vector3 position)
+	{
+
+		if (!AllStiched ()) {
 			
-		}
-		else
-		{
-			// Two solutions.
-			t = (float)((-B + System.Math.Sqrt(det)) / (2 * A));
-			return new Vector3(point1.x + t * dx, point1.y + t * dy,0);
-			
+			BreakAll ();
+			print ("winner");
 		}
 	}
+
 	
 	public void RemoveNode(Clocks node)
 	{
@@ -128,12 +113,16 @@ public class NodeManager : MonoBehaviour {
 	}
 
 	public bool AllStiched(){
+		int count = 0;
 		foreach (Clocks node in _clocks) 
 		{	
 			
 			if(node.Stiched == false){
-				return false;
+				count++;
 			}
+		}
+		if(count >1){
+			return false;
 		}
 		return true;
 	}
