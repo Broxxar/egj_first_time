@@ -20,6 +20,12 @@ public class CameraShaker : MonoBehaviour
 	}
 
 	public float ShakeMagnitude;
+	Vector3 originalPosition;
+
+	public void Awake ()
+	{
+		originalPosition = transform.position;
+	}
 
 	public void Shake ()
 	{
@@ -28,16 +34,15 @@ public class CameraShaker : MonoBehaviour
 
 	IEnumerator ShakeAsync ()
 	{
-		Vector3 oiriginalPosition = transform.position;
 		float t = 0;
 
 		while (t < .25f)
 		{
 			t += Time.deltaTime;
-			transform.position = oiriginalPosition + (Vector3)Random.insideUnitCircle * ShakeMagnitude;
+			transform.position = originalPosition + (Vector3)Random.insideUnitCircle * ShakeMagnitude;
 			yield return null;
 		}
 
-		transform.position = oiriginalPosition;
+		transform.position = originalPosition;
 	}
 }

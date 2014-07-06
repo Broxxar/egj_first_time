@@ -315,7 +315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab82dd1e9603cb4390be3ce33b722ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Stiched: 0
+  Stitched: 0
   Dragging: 0
   PartnerNode: {fileID: 0}
   LineWidthMatched: .150000006
@@ -323,6 +323,7 @@ MonoBehaviour:
   LineWidthSmoothingFactor: 10
   LineColorDefault: {r: .330882311, g: .380082041, b: 1, a: 1}
   LineColorBreak: {r: 1, g: 0, b: 0, a: 1}
+  LineColorWin: {r: .191176474, g: 1, b: .714532971, a: 1}
   LineColorSmoothingFactor: 5
   LineZDepth: .100000001
 --- !u!114 &11400006

@@ -114,7 +114,7 @@ public class LineManager : MonoBehaviour {
 			}
 		}
 		if(remove.Count >1 ){
-			NodeManager.Instance.BreakAll();
+			NodeManager.Instance.BreakAll(false);
 			return true;
 		}
 		return false;

@@ -32,7 +32,7 @@ public class Timer : MonoBehaviour
 		{
 			_currentTime = value;
 			TimeSpan span = TimeSpan.FromSeconds(value);
-			_textMesh.text = string.Format("{0}:{1}", span.Minutes.ToString("D2"), span.Seconds.ToString("D2"));
+			_textMesh.text = string.Format("{0}:{1}:{2}", span.Minutes.ToString("D2"), span.Seconds.ToString("D2"), span.Milliseconds.ToString("D3"));
 		}
 	}
 
@@ -44,9 +44,9 @@ public class Timer : MonoBehaviour
 		_textMesh = GetComponent<TextMesh>();
 	}
 
-	public void StartTimer ()
+	public void StartTimer (float startTime)
 	{
-		CurrentTime = 0;
+		CurrentTime = startTime;
 		_started = true;
 	}
 

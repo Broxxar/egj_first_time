@@ -57,7 +57,7 @@ public class Fader : MonoBehaviour {
 
 		while (t < 1)
 		{
-			t = Mathf.Clamp(t + Time.deltaTime * 2, 0, 1);
+			t = Mathf.Clamp(t + Time.deltaTime * 4, 0, 1);
 			_material.color = new Color(0, 0, 0, t);
 			yield return null;
 		}
@@ -74,7 +74,7 @@ public class Fader : MonoBehaviour {
 
 		while (t > 0)
 		{
-			t = Mathf.Clamp(t - Time.deltaTime * 2, 0, 1);
+			t = Mathf.Clamp(t - Time.deltaTime * 4, 0, 1);
 			_material.color = new Color(0, 0, 0, t);
 			yield return null;
 		}
