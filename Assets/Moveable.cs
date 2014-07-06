@@ -27,9 +27,9 @@ public class Moveable : MonoBehaviour
 
 	public void SetStartPosition ()
 	{
-		if (XPositionCurve.keys.Length == 0)
+		if (XPositionCurve.keys.Length < 2)
 			XPositionCurve = AnimationCurve.Linear(0,0,1,0);
-		if (YPositionCurve.keys.Length == 0)
+		if (YPositionCurve.keys.Length < 2)
 			YPositionCurve = AnimationCurve.Linear(0,0,1,0);
 
 		StartPostion = transform.position;
@@ -41,9 +41,9 @@ public class Moveable : MonoBehaviour
 
 	public void SetEndPosition ()
 	{
-		if (XPositionCurve.keys.Length == 0)
+		if (XPositionCurve.keys.Length < 2)
 			XPositionCurve = AnimationCurve.Linear(0,0,1,0);
-		if (YPositionCurve.keys.Length == 0)
+		if (YPositionCurve.keys.Length < 2)
 			YPositionCurve = AnimationCurve.Linear(0,0,1,0);
 
 		EndPosition = transform.position;

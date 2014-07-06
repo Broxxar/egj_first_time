@@ -127,29 +127,29 @@ MonoBehaviour:
     m_Curve:
     - time: 0
       value: 2
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
+      inSlope: -4
+      outSlope: -4
+      tangentMode: 10
     - time: 1
       value: -2
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
+      inSlope: -4
+      outSlope: -4
+      tangentMode: 10
     m_PreInfinity: 2
     m_PostInfinity: 2
   YPositionCurve:
     serializedVersion: 2
     m_Curve:
-    - time: 0
+    - time: .00189725915
       value: 2
-      inSlope: 2
-      outSlope: 2
+      inSlope: 2.00761795
+      outSlope: 2.00761795
       tangentMode: 10
     - time: .5
       value: 3
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
+      inSlope: .00380897522
+      outSlope: .00380897522
+      tangentMode: 10
     - time: 1
       value: 2
       inSlope: -2
@@ -516,7 +516,7 @@ Transform:
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 100000, guid: 7521f6b54020b4c46a00bc9cf88d95e8, type: 2}
-  m_PrefabInternal: {fileID: 2142358268}
+  m_PrefabInternal: {fileID: 519939277}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 472199614}
@@ -533,7 +533,7 @@ MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 11400002, guid: 7521f6b54020b4c46a00bc9cf88d95e8,
     type: 2}
-  m_PrefabInternal: {fileID: 2142358268}
+  m_PrefabInternal: {fileID: 519939277}
   m_GameObject: {fileID: 472199612}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -546,7 +546,7 @@ MonoBehaviour:
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 400000, guid: 7521f6b54020b4c46a00bc9cf88d95e8, type: 2}
-  m_PrefabInternal: {fileID: 2142358268}
+  m_PrefabInternal: {fileID: 519939277}
   m_GameObject: {fileID: 472199612}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.00251198, y: 5, z: 0}
@@ -559,7 +559,7 @@ Transform:
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 100002, guid: 7521f6b54020b4c46a00bc9cf88d95e8, type: 2}
-  m_PrefabInternal: {fileID: 2142358268}
+  m_PrefabInternal: {fileID: 519939277}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 474200575}
@@ -576,7 +576,7 @@ GameObject:
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 400002, guid: 7521f6b54020b4c46a00bc9cf88d95e8, type: 2}
-  m_PrefabInternal: {fileID: 2142358268}
+  m_PrefabInternal: {fileID: 519939277}
   m_GameObject: {fileID: 474200574}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -589,7 +589,7 @@ MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 11400004, guid: 7521f6b54020b4c46a00bc9cf88d95e8,
     type: 2}
-  m_PrefabInternal: {fileID: 2142358268}
+  m_PrefabInternal: {fileID: 519939277}
   m_GameObject: {fileID: 474200574}
   m_Enabled: 0
   m_EditorHideFlags: 0
@@ -628,7 +628,7 @@ Camera:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 2000000, guid: 7521f6b54020b4c46a00bc9cf88d95e8,
     type: 2}
-  m_PrefabInternal: {fileID: 2142358268}
+  m_PrefabInternal: {fileID: 519939277}
   m_GameObject: {fileID: 474200574}
   m_Enabled: 1
   serializedVersion: 2
@@ -722,6 +722,54 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300010, guid: 3c3fcc04a43244b40897f655a7248253, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1001 &519939277
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400008, guid: 7521f6b54020b4c46a00bc9cf88d95e8, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: 7521f6b54020b4c46a00bc9cf88d95e8, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: 7521f6b54020b4c46a00bc9cf88d95e8, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: 7521f6b54020b4c46a00bc9cf88d95e8, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: 7521f6b54020b4c46a00bc9cf88d95e8, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: 7521f6b54020b4c46a00bc9cf88d95e8, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: 7521f6b54020b4c46a00bc9cf88d95e8, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: 7521f6b54020b4c46a00bc9cf88d95e8, type: 2}
+      propertyPath: m_RootMapOrder
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: 7521f6b54020b4c46a00bc9cf88d95e8, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 7521f6b54020b4c46a00bc9cf88d95e8, type: 2}
+  m_RootGameObject: {fileID: 1983030120}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &535471504
 GameObject:
   m_ObjectHideFlags: 0
@@ -907,29 +955,29 @@ MonoBehaviour:
     m_Curve:
     - time: 0
       value: -2
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
+      inSlope: 4
+      outSlope: 4
+      tangentMode: 10
     - time: 1
       value: 2
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
+      inSlope: 4
+      outSlope: 4
+      tangentMode: 10
     m_PreInfinity: 2
     m_PostInfinity: 2
   YPositionCurve:
     serializedVersion: 2
     m_Curve:
-    - time: 0
+    - time: .00189725915
       value: -2
-      inSlope: 2
-      outSlope: 2
+      inSlope: 2.00761795
+      outSlope: 2.00761795
       tangentMode: 10
     - time: .5
       value: -1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
+      inSlope: .00380897522
+      outSlope: .00380897522
+      tangentMode: 10
     - time: 1
       value: -2
       inSlope: -2
@@ -1325,29 +1373,29 @@ MonoBehaviour:
     m_Curve:
     - time: 0
       value: 2
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
+      inSlope: -4
+      outSlope: -4
+      tangentMode: 10
     - time: 1
       value: -2
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
+      inSlope: -4
+      outSlope: -4
+      tangentMode: 10
     m_PreInfinity: 2
     m_PostInfinity: 2
   YPositionCurve:
     serializedVersion: 2
     m_Curve:
-    - time: 0
+    - time: .00189725915
       value: -2
-      inSlope: -2
-      outSlope: -2
+      inSlope: -2.00761795
+      outSlope: -2.00761795
       tangentMode: 10
     - time: .5
       value: -3
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
+      inSlope: -.00380897522
+      outSlope: -.00380897522
+      tangentMode: 10
     - time: 1
       value: -2
       inSlope: 2
@@ -1891,11 +1939,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
       propertyPath: YPositionCurve.m_Curve.Array.data[0].inSlope
-      value: 2
+      value: 2.00761795
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
       propertyPath: YPositionCurve.m_Curve.Array.data[0].outSlope
-      value: 2
+      value: 2.00761795
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
       propertyPath: YPositionCurve.m_Curve.Array.data[0].tangentMode
@@ -1916,6 +1964,42 @@ Prefab:
     - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
       propertyPath: RoundTripTime
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
+      propertyPath: YPositionCurve.m_Curve.Array.data[1].inSlope
+      value: .00380897522
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
+      propertyPath: YPositionCurve.m_Curve.Array.data[1].outSlope
+      value: .00380897522
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
+      propertyPath: YPositionCurve.m_Curve.Array.data[1].tangentMode
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
+      propertyPath: XPositionCurve.m_Curve.Array.data[0].inSlope
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
+      propertyPath: XPositionCurve.m_Curve.Array.data[0].outSlope
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
+      propertyPath: XPositionCurve.m_Curve.Array.data[0].tangentMode
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
+      propertyPath: XPositionCurve.m_Curve.Array.data[1].inSlope
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
+      propertyPath: XPositionCurve.m_Curve.Array.data[1].outSlope
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
+      propertyPath: XPositionCurve.m_Curve.Array.data[1].tangentMode
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
@@ -2026,29 +2110,29 @@ MonoBehaviour:
     m_Curve:
     - time: 0
       value: -2
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
+      inSlope: 4
+      outSlope: 4
+      tangentMode: 10
     - time: 1
       value: 2
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
+      inSlope: 4
+      outSlope: 4
+      tangentMode: 10
     m_PreInfinity: 2
     m_PostInfinity: 2
   YPositionCurve:
     serializedVersion: 2
     m_Curve:
-    - time: 0
+    - time: .00189725915
       value: 2
-      inSlope: -2
-      outSlope: -2
+      inSlope: -2.00761795
+      outSlope: -2.00761795
       tangentMode: 10
     - time: .5
       value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
+      inSlope: -.00380897522
+      outSlope: -.00380897522
+      tangentMode: 10
     - time: 1
       value: 2
       inSlope: 2
@@ -2257,7 +2341,7 @@ SpriteRenderer:
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 100004, guid: 7521f6b54020b4c46a00bc9cf88d95e8, type: 2}
-  m_PrefabInternal: {fileID: 2142358268}
+  m_PrefabInternal: {fileID: 519939277}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1601920621}
@@ -2276,7 +2360,7 @@ Camera:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 2000002, guid: 7521f6b54020b4c46a00bc9cf88d95e8,
     type: 2}
-  m_PrefabInternal: {fileID: 2142358268}
+  m_PrefabInternal: {fileID: 519939277}
   m_GameObject: {fileID: 1601920619}
   m_Enabled: 1
   serializedVersion: 2
@@ -2308,7 +2392,7 @@ Camera:
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 400004, guid: 7521f6b54020b4c46a00bc9cf88d95e8, type: 2}
-  m_PrefabInternal: {fileID: 2142358268}
+  m_PrefabInternal: {fileID: 519939277}
   m_GameObject: {fileID: 1601920619}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -2322,7 +2406,7 @@ MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 11400006, guid: 7521f6b54020b4c46a00bc9cf88d95e8,
     type: 2}
-  m_PrefabInternal: {fileID: 2142358268}
+  m_PrefabInternal: {fileID: 519939277}
   m_GameObject: {fileID: 1601920619}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -2359,8 +2443,9 @@ MonoBehaviour:
 --- !u!114 &1601920623
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 11400010, guid: 7521f6b54020b4c46a00bc9cf88d95e8,
+    type: 2}
+  m_PrefabInternal: {fileID: 519939277}
   m_GameObject: {fileID: 1601920619}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -2805,7 +2890,7 @@ MonoBehaviour:
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 100006, guid: 7521f6b54020b4c46a00bc9cf88d95e8, type: 2}
-  m_PrefabInternal: {fileID: 2142358268}
+  m_PrefabInternal: {fileID: 519939277}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1932937858}
@@ -2823,7 +2908,7 @@ GameObject:
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 400006, guid: 7521f6b54020b4c46a00bc9cf88d95e8, type: 2}
-  m_PrefabInternal: {fileID: 2142358268}
+  m_PrefabInternal: {fileID: 519939277}
   m_GameObject: {fileID: 1932937857}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: .200000003, y: -.100000001, z: 1}
@@ -2837,7 +2922,7 @@ TextMesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 10200000, guid: 7521f6b54020b4c46a00bc9cf88d95e8,
     type: 2}
-  m_PrefabInternal: {fileID: 2142358268}
+  m_PrefabInternal: {fileID: 519939277}
   m_GameObject: {fileID: 1932937857}
   m_Text: 00:00:000
   m_OffsetZ: 0
@@ -2858,7 +2943,7 @@ Renderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 2300000, guid: 7521f6b54020b4c46a00bc9cf88d95e8,
     type: 2}
-  m_PrefabInternal: {fileID: 2142358268}
+  m_PrefabInternal: {fileID: 519939277}
   m_GameObject: {fileID: 1932937857}
   m_Enabled: 1
   m_CastShadows: 1
@@ -2879,7 +2964,7 @@ MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 11400008, guid: 7521f6b54020b4c46a00bc9cf88d95e8,
     type: 2}
-  m_PrefabInternal: {fileID: 2142358268}
+  m_PrefabInternal: {fileID: 519939277}
   m_GameObject: {fileID: 1932937857}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -2991,11 +3076,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
       propertyPath: YPositionCurve.m_Curve.Array.data[0].inSlope
-      value: -2
+      value: -2.00761795
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
       propertyPath: YPositionCurve.m_Curve.Array.data[0].outSlope
-      value: -2
+      value: -2.00761795
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
       propertyPath: YPositionCurve.m_Curve.Array.data[0].tangentMode
@@ -3016,6 +3101,42 @@ Prefab:
     - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
       propertyPath: RoundTripTime
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
+      propertyPath: YPositionCurve.m_Curve.Array.data[1].inSlope
+      value: -.00380897522
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
+      propertyPath: YPositionCurve.m_Curve.Array.data[1].outSlope
+      value: -.00380897522
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
+      propertyPath: YPositionCurve.m_Curve.Array.data[1].tangentMode
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
+      propertyPath: XPositionCurve.m_Curve.Array.data[0].inSlope
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
+      propertyPath: XPositionCurve.m_Curve.Array.data[0].outSlope
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
+      propertyPath: XPositionCurve.m_Curve.Array.data[0].tangentMode
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
+      propertyPath: XPositionCurve.m_Curve.Array.data[1].inSlope
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
+      propertyPath: XPositionCurve.m_Curve.Array.data[1].outSlope
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
+      propertyPath: XPositionCurve.m_Curve.Array.data[1].tangentMode
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
@@ -3099,7 +3220,7 @@ MeshFilter:
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 100008, guid: 7521f6b54020b4c46a00bc9cf88d95e8, type: 2}
-  m_PrefabInternal: {fileID: 2142358268}
+  m_PrefabInternal: {fileID: 519939277}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1983030125}
@@ -3118,7 +3239,7 @@ AudioListener:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 8100000, guid: 7521f6b54020b4c46a00bc9cf88d95e8,
     type: 2}
-  m_PrefabInternal: {fileID: 2142358268}
+  m_PrefabInternal: {fileID: 519939277}
   m_GameObject: {fileID: 1983030120}
   m_Enabled: 1
 --- !u!114 &1983030122
@@ -3126,7 +3247,7 @@ MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 11400000, guid: 7521f6b54020b4c46a00bc9cf88d95e8,
     type: 2}
-  m_PrefabInternal: {fileID: 2142358268}
+  m_PrefabInternal: {fileID: 519939277}
   m_GameObject: {fileID: 1983030120}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -3139,7 +3260,7 @@ Camera:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 2000004, guid: 7521f6b54020b4c46a00bc9cf88d95e8,
     type: 2}
-  m_PrefabInternal: {fileID: 2142358268}
+  m_PrefabInternal: {fileID: 519939277}
   m_GameObject: {fileID: 1983030120}
   m_Enabled: 1
   serializedVersion: 2
@@ -3171,7 +3292,7 @@ Camera:
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 400008, guid: 7521f6b54020b4c46a00bc9cf88d95e8, type: 2}
-  m_PrefabInternal: {fileID: 2142358268}
+  m_PrefabInternal: {fileID: 519939277}
   m_GameObject: {fileID: 1983030120}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
@@ -3418,11 +3539,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
       propertyPath: YPositionCurve.m_Curve.Array.data[0].inSlope
-      value: -2
+      value: -2.00761795
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
       propertyPath: YPositionCurve.m_Curve.Array.data[0].outSlope
-      value: -2
+      value: -2.00761795
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
       propertyPath: YPositionCurve.m_Curve.Array.data[0].tangentMode
@@ -3443,6 +3564,42 @@ Prefab:
     - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
       propertyPath: RoundTripTime
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
+      propertyPath: XPositionCurve.m_Curve.Array.data[0].inSlope
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
+      propertyPath: XPositionCurve.m_Curve.Array.data[0].outSlope
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
+      propertyPath: XPositionCurve.m_Curve.Array.data[0].tangentMode
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
+      propertyPath: XPositionCurve.m_Curve.Array.data[1].inSlope
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
+      propertyPath: XPositionCurve.m_Curve.Array.data[1].outSlope
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
+      propertyPath: XPositionCurve.m_Curve.Array.data[1].tangentMode
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
+      propertyPath: YPositionCurve.m_Curve.Array.data[1].inSlope
+      value: -.00380897522
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
+      propertyPath: YPositionCurve.m_Curve.Array.data[1].outSlope
+      value: -.00380897522
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
+      propertyPath: YPositionCurve.m_Curve.Array.data[1].tangentMode
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
@@ -3550,11 +3707,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
       propertyPath: YPositionCurve.m_Curve.Array.data[0].inSlope
-      value: 2
+      value: 2.00761795
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
       propertyPath: YPositionCurve.m_Curve.Array.data[0].outSlope
-      value: 2
+      value: 2.00761795
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
       propertyPath: YPositionCurve.m_Curve.Array.data[0].tangentMode
@@ -3576,56 +3733,44 @@ Prefab:
       propertyPath: RoundTripTime
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
+      propertyPath: YPositionCurve.m_Curve.Array.data[1].inSlope
+      value: .00380897522
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
+      propertyPath: YPositionCurve.m_Curve.Array.data[1].outSlope
+      value: .00380897522
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
+      propertyPath: YPositionCurve.m_Curve.Array.data[1].tangentMode
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
+      propertyPath: XPositionCurve.m_Curve.Array.data[0].inSlope
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
+      propertyPath: XPositionCurve.m_Curve.Array.data[0].outSlope
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
+      propertyPath: XPositionCurve.m_Curve.Array.data[0].tangentMode
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
+      propertyPath: XPositionCurve.m_Curve.Array.data[1].inSlope
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
+      propertyPath: XPositionCurve.m_Curve.Array.data[1].outSlope
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
+      propertyPath: XPositionCurve.m_Curve.Array.data[1].tangentMode
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
   m_RootGameObject: {fileID: 653723010}
-  m_IsPrefabParent: 0
-  m_IsExploded: 1
---- !u!1001 &2142358268
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 400008, guid: 7521f6b54020b4c46a00bc9cf88d95e8, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400008, guid: 7521f6b54020b4c46a00bc9cf88d95e8, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400008, guid: 7521f6b54020b4c46a00bc9cf88d95e8, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -10
-      objectReference: {fileID: 0}
-    - target: {fileID: 400008, guid: 7521f6b54020b4c46a00bc9cf88d95e8, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400008, guid: 7521f6b54020b4c46a00bc9cf88d95e8, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400008, guid: 7521f6b54020b4c46a00bc9cf88d95e8, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400008, guid: 7521f6b54020b4c46a00bc9cf88d95e8, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400008, guid: 7521f6b54020b4c46a00bc9cf88d95e8, type: 2}
-      propertyPath: m_RootMapOrder
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 400008, guid: 7521f6b54020b4c46a00bc9cf88d95e8, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 7521f6b54020b4c46a00bc9cf88d95e8, type: 2}
-  m_RootGameObject: {fileID: 1983030120}
   m_IsPrefabParent: 0
   m_IsExploded: 1

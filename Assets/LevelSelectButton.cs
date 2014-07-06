@@ -14,7 +14,6 @@ public class LevelSelectButton : MonoBehaviour {
 	{
 		GetComponent<Clickable>().DownAction += OnDownAction;
 		_initialScale = transform.localScale;
-		GetComponentInChildren<TextMesh>().text = LevelNumber.ToString("N0");
 	}
 
 	void OnDownAction (Vector3 position)
