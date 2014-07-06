@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Node : MonoBehaviour
-{
-	public bool Matched;
-	public Node PartnerNode;
+public class Clocks : MonoBehaviour {
+	
+	public bool Stiched;
+	public bool Dragging;
+	public Clocks PartnerNode;
 	public float LineWidthMatched;
 	public float LineWidthDragging;
 	public float LineWidthSmoothingFactor;
@@ -12,58 +13,65 @@ public class Node : MonoBehaviour
 	public Color LineColorBreak;
 	public float LineColorSmoothingFactor;
 	public float LineZDepth;
-
+	
 	InputManager _inputManager;
-	bool _dragging;
+	NodeManager _nodeManager;
+	LineManager _lineManager;
 	LineRenderer _lineRenderer;
 	RaycastHit2D[] _hitInfo;
 	Transform _lineEnd;
 	float _lineWidth;
 	float _targetLineWidth;
 	Color _lineColor;
-		
+	
 	void Awake ()
 	{
 		_inputManager = InputManager.Instance;
-
+		_lineManager = LineManager.Instance;
+		_nodeManager = NodeManager.Instance;
+		
+		_nodeManager.AddNode (this);
 		GetComponent<Clickable>().DownAction += OnDownAction;
 		_inputManager.GlobalUpAction += OnGlobalUpAction;
 		_lineRenderer = transform.FindChild("line_renderer").GetComponent<LineRenderer>();
 		_lineEnd = transform.FindChild("line_end");
 	}
-
+	
 	void OnGlobalUpAction (Vector3 position)
 	{
-		if (_dragging )
+		if (Dragging )
 		{
-			if (Physics2D.OverlapPoint (position) == (PartnerNode.collider2D))
-			{
-				_lineEnd.position = PartnerNode.transform.position;
-				this.Matched = true;
-				LineManager.Instance.AddPair(this);
-				PartnerNode.Matched = true;
-			}
-			_dragging = false;
+			
+//			//IF you don't win break line and set nodes partners to null
+//			if (Physics2D.OverlapPoint (position) == (PartnerNode.collider2D))
+//			{
+//				_lineEnd.position = PartnerNode.transform.position;
+//				this.Stiched = true;
+//				_lineManager.AddPair(this);
+//				PartnerNode.Stiched = true;
+//			}
+//			Dragging = false;
 		}
 	}
-
+	
 	void OnDownAction (Vector3 position)
 	{
-		if (!this.Matched) {
-			_dragging = true;
+		if (!this.Stiched) {
+			Dragging = true;
 		}
 	}
-
+	
 	void UpdateLine ()
 	{
 		_lineWidth = Mathf.Lerp(_lineWidth, _targetLineWidth, Time.deltaTime * LineWidthSmoothingFactor);
 		_lineRenderer.SetWidth(_lineWidth, _lineWidth);
-
+		
 		_lineColor = Color.Lerp(_lineColor, LineColorDefault, Time.deltaTime * LineColorSmoothingFactor);
 		_lineRenderer.SetColors(_lineColor, _lineColor);
 
-		if (this.Matched)
+		if (this.Stiched)
 		{
+
 			_lineEnd.position = PartnerNode.transform.position;
 			_targetLineWidth = LineWidthMatched;
 		}
@@ -72,44 +80,49 @@ public class Node : MonoBehaviour
 		_hitInfo = Physics2D.LinecastAll(transform.position, _lineEnd.position);
 
 	}
-	
+//	
 	void UpdateDragging ()
 	{
-		if (_dragging)
+		if (Dragging)
 		{
-			_lineEnd.position = _inputManager.MouseWorldPosition;
-			_targetLineWidth = LineWidthDragging;
+			Clocks clock = _nodeManager.DifferentClockHit(this);
+			if(clock != null && clock.Stiched == false)
+			{
+				this.PartnerNode = clock;
+				this.Stiched = true;
+				this.PartnerNode.Dragging = true;
+				Dragging = false;
+				_lineManager.AddPair(this);
+
+				
+			}else{
+			//check if you hit a node make that your partner and add line to line manager
+				_lineEnd.position = _inputManager.MouseWorldPosition;
+				_targetLineWidth = LineWidthDragging;
+			}
 		}
-		else if(!Matched)
+		else if(!Stiched)
 		{
-			_targetLineWidth = 0;
+			//if not win
+//			_nodeManager.BreakAll();//BreakLine();
 		}
 	}
 
 	void CheckLineIntact ()
 	{
-		if (!_dragging && !Matched)
+		if (!Dragging && !Stiched)
 			return;
 
+		if(_hitInfo.Length >2){
 
-		{
-			foreach (RaycastHit2D cldObject in _hitInfo) 
-			{
-					if (cldObject.collider != this.transform.collider2D &&
-					    cldObject.collider != PartnerNode.transform.collider2D) {
-							LineManager.Instance.RemovePair (this);
-							Matched = false;
-							_hitInfo = null;
-							_dragging = false;
-							_lineColor = LineColorBreak;
-					}
-			}
-		} 
-		if (_dragging) {
+			_nodeManager.BreakAll();
+		
+		}
+		if (Dragging) {
 			Vector2 lineStart = new Vector2(transform.position.x, transform.position.y);
 			Vector2 lineEnd = new Vector2(_lineEnd.position.x, _lineEnd.position.y);
 			Line drag = new Line(lineStart, lineEnd);
-			LineManager.Instance.ShouldLineBreak(drag);
+			_lineManager.ShouldLineBreak(drag);
 		}
 	}
 
@@ -117,12 +130,14 @@ public class Node : MonoBehaviour
 	{
 
 		_lineColor = LineColorBreak;
-		PartnerNode._lineColor = LineColorBreak;
-		Matched = false;
-		PartnerNode.Matched = false;
-		_dragging = false;
+		_targetLineWidth = 0;
+		PartnerNode = null;
+		Stiched = false;
+		Dragging = false;
+		_hitInfo = null;
+		_lineManager.RemovePair (this);
 	}
-
+	
 	void Update ()
 	{
 		UpdateDragging();
