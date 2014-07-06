@@ -83,7 +83,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
       propertyPath: YPositionCurve.m_Curve.Array.size
-      value: 7
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
+      propertyPath: XPositionCurve.m_Curve.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 2363009fa83774247ab617cc46a08577, type: 2}
       propertyPath: m_LocalPosition.x
@@ -127,15 +131,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
       propertyPath: YPositionCurve.m_Curve.Array.data[0].value
-      value: -6.8355813
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
       propertyPath: YPositionCurve.m_Curve.Array.data[1].time
-      value: .145787656
+      value: .252930582
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
       propertyPath: YPositionCurve.m_Curve.Array.data[1].value
-      value: .0233449936
+      value: 2.23125553
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
       propertyPath: YPositionCurve.m_Curve.Array.data[1].inSlope
@@ -147,51 +151,51 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
       propertyPath: YPositionCurve.m_Curve.Array.data[2].time
-      value: .302631587
+      value: .507518768
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
       propertyPath: YPositionCurve.m_Curve.Array.data[2].value
-      value: 1.50859845
+      value: -3.021065
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
       propertyPath: YPositionCurve.m_Curve.Array.data[2].inSlope
-      value: -3.33368778
+      value: -.770529747
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
       propertyPath: YPositionCurve.m_Curve.Array.data[2].outSlope
-      value: -3.33368778
+      value: -.770529747
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
       propertyPath: YPositionCurve.m_Curve.Array.data[3].time
-      value: .503759265
+      value: .753759384
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
       propertyPath: YPositionCurve.m_Curve.Array.data[3].value
-      value: -2.03156328
+      value: 2.17720127
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
       propertyPath: YPositionCurve.m_Curve.Array.data[3].inSlope
-      value: -.770529747
+      value: -.00445405021
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
       propertyPath: YPositionCurve.m_Curve.Array.data[3].outSlope
-      value: -.770529747
+      value: -.00445405021
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
       propertyPath: YPositionCurve.m_Curve.Array.data[4].time
-      value: .687969923
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
       propertyPath: YPositionCurve.m_Curve.Array.data[4].value
-      value: 1.57569194
+      value: -.00458705425
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
       propertyPath: YPositionCurve.m_Curve.Array.data[4].inSlope
-      value: -.00445405021
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
       propertyPath: YPositionCurve.m_Curve.Array.data[4].outSlope
-      value: -.00445405021
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
       propertyPath: StartPostion.x
@@ -203,7 +207,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
       propertyPath: XPositionCurve.m_Curve.Array.data[0].value
-      value: -.049176693
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
       propertyPath: EndPosition.x
@@ -248,6 +252,34 @@ Prefab:
     - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
       propertyPath: YPositionCurve.m_Curve.Array.data[6].outSlope
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
+      propertyPath: XPositionCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
+      propertyPath: XPositionCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
+      propertyPath: XPositionCurve.m_Curve.Array.data[3].value
+      value: -.496242046
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
+      propertyPath: XPositionCurve.m_Curve.Array.data[3].time
+      value: .75
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
+      propertyPath: XPositionCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
+      propertyPath: XPositionCurve.m_Curve.Array.data[1].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
+      propertyPath: RoundTripTime
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
@@ -600,7 +632,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
   UseCurves: 1
-  RoundTripTime: 10
+  RoundTripTime: 5
 --- !u!114 &238943671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -911,27 +943,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: -.049176693
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-    - time: .243532091
-      value: .995259345
-      inSlope: -.00445346814
-      outSlope: -.00445346814
-      tangentMode: 0
-    - time: .496240616
-      value: -.00226766081
-      inSlope: -.770529747
-      outSlope: -.770529747
-      tangentMode: 0
-    - time: .748120308
-      value: -.999509335
-      inSlope: -.00445405021
-      outSlope: -.00445405021
-      tangentMode: 0
     - time: 1
-      value: 1.78813934e-07
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -941,44 +958,34 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: -6.8355813
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-    - time: .145787656
-      value: .0233449936
+    - time: .252930582
+      value: 2.23125553
       inSlope: -.00445346814
       outSlope: -.00445346814
       tangentMode: 0
-    - time: .302631587
-      value: 1.50859845
-      inSlope: -3.33368778
-      outSlope: -3.33368778
-      tangentMode: 0
-    - time: .503759265
-      value: -2.03156328
+    - time: .507518768
+      value: -3.021065
       inSlope: -.770529747
       outSlope: -.770529747
       tangentMode: 0
-    - time: .687969923
-      value: 1.57569194
+    - time: .753759384
+      value: 2.17720127
       inSlope: -.00445405021
       outSlope: -.00445405021
       tangentMode: 0
-    - time: .872067034
-      value: .406280488
-      inSlope: -14.9434805
-      outSlope: -14.9434805
-      tangentMode: 0
     - time: 1
-      value: 3.19649649
+      value: -.00458705425
       inSlope: 0
       outSlope: 0
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
   UseCurves: 1
-  RoundTripTime: 10
+  RoundTripTime: 2
 --- !u!114 &459659449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1969,7 +1976,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
   UseCurves: 1
-  RoundTripTime: 10
+  RoundTripTime: 5
 --- !u!114 &1239246486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2261,7 +2268,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
       propertyPath: RoundTripTime
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
       propertyPath: YPositionCurve.m_Curve.Array.data[0].inSlope
@@ -2759,7 +2766,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
       propertyPath: RoundTripTime
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 2363009fa83774247ab617cc46a08577, type: 2}
       propertyPath: YPositionCurve.m_Curve.Array.data[0].time
