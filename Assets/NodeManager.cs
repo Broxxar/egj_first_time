@@ -51,6 +51,15 @@ public class NodeManager : MonoBehaviour {
 			BreakAll (false);
 		}
 	}
+
+	public void CheckWin ()
+	{
+		if (AllSticthed ())
+		{
+			LevelController.Instance.NextLevel();
+			BreakAll (true);
+		}
+	}
 	
 	public void RemoveNode(Clocks node)
 	{

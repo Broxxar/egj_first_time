@@ -24,6 +24,7 @@ public class Clocks : MonoBehaviour {
 	float _lineWidth;
 	float _targetLineWidth;
 	Color _lineColor;
+	bool _won;
 	
 	void Awake ()
 	{
@@ -77,10 +78,11 @@ public class Clocks : MonoBehaviour {
 				this.PartnerNode.Dragging = true;
 				Dragging = false;
 				_lineManager.AddPair(this);
-
-				
-			}else{
-			//check if you hit a node make that your partner and add line to line manager
+				_nodeManager.CheckWin();
+			}
+			else
+			{
+				//check if you hit a node make that your partner and add line to line manager
 				_lineEnd.position = _inputManager.MouseWorldPosition;
 				_targetLineWidth = LineWidthDragging;
 			}
@@ -108,10 +110,20 @@ public class Clocks : MonoBehaviour {
 
 	public void BreakLine(bool win)
 	{
+		if (_won)
+			return;
+
 		if (!win)
+		{
 			_lineColor = LineColorBreak;
+		}
 		else
+		{
+			_won = true;
 			_lineColor = LineColorWin;
+			_targetLineWidth = 4;
+			return;
+		}
 
 		_targetLineWidth = 0;
 		PartnerNode = null;

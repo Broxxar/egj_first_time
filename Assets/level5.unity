@@ -566,8 +566,8 @@ MonoBehaviour:
       tangentMode: 0
     - time: 1
       value: -6.58969831
-      inSlope: -.00445346814
-      outSlope: -.00445346814
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -657,7 +657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab82dd1e9603cb4390be3ce33b722ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Stiched: 0
+  Stitched: 0
   Dragging: 0
   PartnerNode: {fileID: 0}
   LineWidthMatched: .150000006
@@ -665,6 +665,7 @@ MonoBehaviour:
   LineWidthSmoothingFactor: 10
   LineColorDefault: {r: .330882311, g: .380082041, b: 1, a: 1}
   LineColorBreak: {r: 1, g: 0, b: 0, a: 1}
+  LineColorWin: {r: .191176474, g: 1, b: .714532971, a: 1}
   LineColorSmoothingFactor: 5
   LineZDepth: .100000001
 --- !u!58 &238943673
@@ -1010,7 +1011,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab82dd1e9603cb4390be3ce33b722ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Stiched: 0
+  Stitched: 0
   Dragging: 0
   PartnerNode: {fileID: 0}
   LineWidthMatched: .150000006
@@ -1018,6 +1019,7 @@ MonoBehaviour:
   LineWidthSmoothingFactor: 10
   LineColorDefault: {r: .330882311, g: .380082041, b: 1, a: 1}
   LineColorBreak: {r: 1, g: 0, b: 0, a: 1}
+  LineColorWin: {r: .191176474, g: 1, b: .714532971, a: 1}
   LineColorSmoothingFactor: 5
   LineZDepth: .100000001
 --- !u!58 &459659451
@@ -1910,8 +1912,8 @@ MonoBehaviour:
       tangentMode: 0
     - time: 1
       value: 6.68805265
-      inSlope: -.00445346814
-      outSlope: -.00445346814
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -2001,7 +2003,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab82dd1e9603cb4390be3ce33b722ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Stiched: 0
+  Stitched: 0
   Dragging: 0
   PartnerNode: {fileID: 0}
   LineWidthMatched: .150000006
@@ -2009,6 +2011,7 @@ MonoBehaviour:
   LineWidthSmoothingFactor: 10
   LineColorDefault: {r: .330882311, g: .380082041, b: 1, a: 1}
   LineColorBreak: {r: 1, g: 0, b: 0, a: 1}
+  LineColorWin: {r: .191176474, g: 1, b: .714532971, a: 1}
   LineColorSmoothingFactor: 5
   LineZDepth: .100000001
 --- !u!58 &1239246488
@@ -2407,6 +2410,7 @@ GameObject:
   - 4: {fileID: 1601920621}
   - 20: {fileID: 1601920620}
   - 114: {fileID: 1601920622}
+  - 114: {fileID: 1601920623}
   m_Layer: 0
   m_Name: gui_camera
   m_TagString: Untagged
@@ -2499,6 +2503,18 @@ MonoBehaviour:
   blurAndFlaresShader: {fileID: 4800000, guid: be6e39cf196f146d5be72fbefb18ed75, type: 3}
   brightPassFilterShader: {fileID: 4800000, guid: 0aeaa4cb29f5d4e9c8455f04c8575c8c,
     type: 3}
+--- !u!114 &1601920623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400010, guid: 7521f6b54020b4c46a00bc9cf88d95e8,
+    type: 2}
+  m_PrefabInternal: {fileID: 737553063}
+  m_GameObject: {fileID: 1601920619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2557fb24b07359746993a55e6db67feb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1651976646
 Prefab:
   m_ObjectHideFlags: 0
@@ -3141,7 +3157,7 @@ TextMesh:
     type: 2}
   m_PrefabInternal: {fileID: 737553063}
   m_GameObject: {fileID: 1932937857}
-  m_Text: 00:00
+  m_Text: 00:00:000
   m_OffsetZ: 0
   m_CharacterSize: .200000003
   m_LineSpacing: 1
@@ -3326,7 +3342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5520d9f5b5743b34c9fb0fe8781ff0ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShakeMagnitude: .100000001
+  ShakeMagnitude: .075000003
 --- !u!20 &1983030124
 Camera:
   m_ObjectHideFlags: 0

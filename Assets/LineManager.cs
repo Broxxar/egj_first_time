@@ -87,17 +87,18 @@ public class LineManager : MonoBehaviour {
 
 	public Line getNodesLine(Clocks node)
 	{
-		if (_pairs.Contains (node)) {
-						Vector2 startPos;
-						startPos.x = node.transform.position.x;
-						startPos.y = node.transform.position.y;
+		if (_pairs.Contains (node))
+		{
+			Vector2 startPos;
+			startPos.x = node.transform.position.x;
+			startPos.y = node.transform.position.y;
 
-						Vector2 endPos;
-						endPos.x = node.PartnerNode.transform.position.x;
-						endPos.y = node.PartnerNode.transform.position.y;
+			Vector2 endPos;
+			endPos.x = node.PartnerNode.transform.position.x;
+			endPos.y = node.PartnerNode.transform.position.y;
 
-						return new Line (startPos, endPos);
-				}
+			return new Line (startPos, endPos);
+		}
 		return null;
 	}
 
@@ -105,15 +106,17 @@ public class LineManager : MonoBehaviour {
 	{
 		Clocks clock = NodeManager.Instance.MouseIntersectedAt (mainLine);
 		List<Clocks> remove = new List<Clocks> ();
-		foreach(Clocks node in _pairs){
+		foreach(Clocks node in _pairs)
+		{
 			Line testLine = getNodesLine(node);
 
-			if(linesCrossed(mainLine, testLine)){
-
+			if(linesCrossed(mainLine, testLine))
+			{
 				remove.Add(node);
 			}
 		}
-		if(remove.Count >1 ){
+		if(remove.Count >1 )
+		{
 			NodeManager.Instance.BreakAll(false);
 			return true;
 		}

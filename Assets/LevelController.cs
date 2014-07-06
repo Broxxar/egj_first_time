@@ -34,6 +34,12 @@ public class LevelController : MonoBehaviour {
 
 	public void NextLevel ()
 	{
+		if (_currentLevel == 7)
+		{
+			StartCoroutine(EndGame());
+			return;
+		}
+
 		StartCoroutine(NextLevelAsync());
 	}
 
@@ -48,9 +54,27 @@ public class LevelController : MonoBehaviour {
 		Fader.Instance.FadeInBlack(LoadLevel);
 	}
 
+	IEnumerator EndGame ()
+	{
+		BloomExplosion.Instance.Explode();
+		Timer.Instance.StopTimer();
+		_currentTime = Timer.Instance.CurrentTime;
+		_currentLevel ++;
+		InputManager.Instance.enabled = false;
+		PlayerPrefs.SetFloat("bestTime", _currentTime);
+		yield return new WaitForSeconds(0.5f);
+		Fader.Instance.FadeInBlack(LoadMainScreen);
+	}
+
 	void OnLevelWasLoaded (int level)
 	{
 		Timer.Instance.StartTimer(_currentTime);
+	}
+
+	void LoadMainScreen ()
+	{
+		Application.LoadLevel("levelselect");
+		Destroy(gameObject);
 	}
 
 	void LoadLevel ()
