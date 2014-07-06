@@ -2,8 +2,8 @@
 using System.Collections;
 using System;
 
-public class Timer : MonoBehaviour {
-
+public class Timer : MonoBehaviour
+{
 	private static Timer _instance;
 
 	public static Timer Instance
