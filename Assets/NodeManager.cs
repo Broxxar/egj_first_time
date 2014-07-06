@@ -3,8 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class NodeManager : MonoBehaviour {
-	private static NodeManager _instance;
 
+	private static NodeManager _instance;
 	
 	public static NodeManager Instance
 	{
@@ -38,18 +38,16 @@ public class NodeManager : MonoBehaviour {
 			_clocks.Add (node);
 		}
 	}
-
 	
 	void OnGlobalUpAction (Vector3 position)
 	{
 
-		if (!AllStiched ()) {
-			
+		if (AllStiched ())
+		{
 			BreakAll ();
 			print ("winner");
 		}
 	}
-
 	
 	public void RemoveNode(Clocks node)
 	{
@@ -80,60 +78,59 @@ public class NodeManager : MonoBehaviour {
 		return null;
 	}
 
-
-	
-	
 	public Clocks MouseIntersectedAt( Line line)
 	{	
-		foreach (Clocks clock in _clocks) {
+		foreach (Clocks clock in _clocks)
+		{
 			Vector2 circlePos = clock.transform.position;
-						Vector2 point1 = line.StartPos;
-						Vector2 point2 = line.EndPos;
-						float dx, dy, A, B, C, det, t;
-						float radius = .3f;
-		
-						dx = point2.x - point1.x;
-						dy = point2.y - point1.y;
-		
-						A = dx * dx + dy * dy;
-						B = 2 * (dx * (point1.x - circlePos.x) + dy * (point1.y - circlePos.y));
-						C = (point1.x - circlePos.x) * (point1.x - circlePos.x) + (point1.y - circlePos.y) * (point1.y - circlePos.y) - radius * radius;
-		
-						det = B * B - 4 * A * C;
-						if ((A <= 0.0000001) || (det < 0)) {
-								return clock;
-						} else if (det == 0) {
-								return clock;
-						} else {
-								return clock;
+			Vector2 point1 = line.StartPos;
+			Vector2 point2 = line.EndPos;
+			float dx, dy, A, B, C, det, t;
+			float radius = .3f;
+
+			dx = point2.x - point1.x;
+			dy = point2.y - point1.y;
+
+			A = dx * dx + dy * dy;
+			B = 2 * (dx * (point1.x - circlePos.x) + dy * (point1.y - circlePos.y));
+			C = (point1.x - circlePos.x) * (point1.x - circlePos.x) + (point1.y - circlePos.y) * (point1.y - circlePos.y) - radius * radius;
+
+			det = B * B - 4 * A * C;
+			if ((A <= 0.0000001) || (det < 0)) {
+					return clock;
+			} else if (det == 0) {
+					return clock;
+			} else {
+					return clock;
 			
-						}
-				}
+			}
+		}
 		return null;
 	}
 
-	public bool AllStiched(){
+	public bool AllStiched()
+	{
 		int count = 0;
 		foreach (Clocks node in _clocks) 
 		{	
-			
-			if(node.Stiched == false){
+			if(node.Stiched == false)
+			{
 				count++;
 			}
 		}
-		if(count >1){
+
+		if(count >1)
+		{
 			return false;
 		}
 		return true;
 	}
-	public void BreakAll(){
+
+	public void BreakAll()
+	{
 		foreach (Clocks node in _clocks) 
 		{	
-
-				node.BreakLine();
-
+			node.BreakLine();
 		}
 	}
-
-
 }
