@@ -10,14 +10,31 @@ public class Moveable : MonoBehaviour
 	public bool UseCurves;
 	public float RoundTripTime;
 
+	void Start (){
+		Camera camera = Camera.main;			
+		float diameter = camera.orthographicSize/9;
+		this.transform.localScale = new Vector3(diameter, diameter, 1);
+
+	}
+
 	void Update ()
 	{
 		float cosTime = Mathf.Cos((Time.time * Mathf.PI * 2) / RoundTripTime + Mathf.PI);
 		cosTime = (1 + cosTime)/2;
 
 		if (UseCurves)
-		{
-			transform.position = new Vector3(XPositionCurve.Evaluate(cosTime), YPositionCurve.Evaluate(cosTime), 0);
+		{	Camera camera = Camera.main;			
+			float halfWidth = camera.aspect * camera.orthographicSize;
+			float halfHeight = camera.orthographicSize;
+			
+			float leftEdge = camera.transform.position.x - halfWidth;
+			float rightEdge = camera.transform.position.x + halfWidth;
+			float bottomEdge = camera.transform.position.y - halfHeight;
+			float topEdge = camera.transform.position.y + halfHeight;
+			
+			float clockXPos = Mathf.Lerp(leftEdge, rightEdge, XPositionCurve.Evaluate(cosTime));
+			float clockYPos = Mathf.Lerp(bottomEdge, topEdge, YPositionCurve.Evaluate(cosTime));
+			transform.position = new Vector3(clockXPos, clockYPos, 0);
 		}
 		else
 		{

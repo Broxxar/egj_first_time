@@ -15,7 +15,7 @@ public class GUIAnchor : MonoBehaviour {
 	
 	public void RepositionSelf () {
 		if (!guiCamera)
-			guiCamera = transform.parent.camera;
+			guiCamera = transform.parent.GetComponent<Camera>();
 
 		if (elementPosition == GUIElementPosition.TopLeft) {
 			transform.localPosition = new Vector3(-guiCamera.orthographicSize * guiCamera.aspect, guiCamera.orthographicSize, 0);

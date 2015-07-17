@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System;
 
@@ -29,7 +29,7 @@ public class LevelSelectButton : MonoBehaviour {
 	
 	void Update ()
 	{
-		if (Physics2D.OverlapPoint(InputManager.Instance.MouseWorldPosition) == collider2D && InputManager.Instance.enabled)
+		if (Physics2D.OverlapPoint(InputManager.Instance.MouseWorldPosition) == GetComponent<Collider2D>() && InputManager.Instance.enabled)
 		{
 			transform.localScale = Vector3.Lerp(transform.localScale, _initialScale * RollOverScale, Time.deltaTime * RollOverSmoothingFactor);
 		}

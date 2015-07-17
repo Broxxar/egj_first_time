@@ -81,7 +81,7 @@ public class NodeManager : MonoBehaviour {
 		{
 			foreach (Clocks node in _clocks) 
 			{	
-				if(node != current && collider.Equals(node.collider2D))
+				if(node != current && collider.Equals(node.GetComponent<Collider2D>()))
 				{
 					return node;
 				}

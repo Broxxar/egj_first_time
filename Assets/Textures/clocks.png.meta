@@ -1,6 +1,16 @@
 fileFormatVersion: 2
 guid: 3c3fcc04a43244b40897f655a7248253
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: clock_1
+    21300002: hour_1
+    21300004: minute_2
+    21300006: minute_1
+    21300008: clock_2
+    21300010: hour_2
+    21300012: clock_3
+    21300014: minute_3
+    21300016: hour_3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -19,6 +29,9 @@ TextureImporter:
   isReadable: 0
   grayScaleToAlpha: 0
   generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -1
   maxTextureSize: 1024
@@ -29,6 +42,7 @@ TextureImporter:
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
+  rGBM: 0
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
@@ -134,3 +148,5 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
+  assetBundleName: 
+  assetBundleVariant: 

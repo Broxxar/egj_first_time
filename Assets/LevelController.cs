@@ -74,7 +74,7 @@ public class LevelController : MonoBehaviour {
 	void LoadMainScreen ()
 	{
 		Application.LoadLevel("levelselect");
-		Destroy(gameObject);
+		Destroy(this.gameObject);
 	}
 
 	void LoadLevel ()

@@ -26,6 +26,7 @@ public class InputManager : MonoBehaviour
 
 	void Update ()
 	{
+#if UNITY_STANDALONE || UNITY_WEBPLAYER || UNITY_EDITOR
 		MouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
 		if (Input.GetMouseButtonDown(0))
@@ -57,5 +58,40 @@ public class InputManager : MonoBehaviour
 				}
 			}
 		}
+#else
+		if(Input.touchCount > 0){
+			Touch myTouch = Input.touches[0];
+			MouseWorldPosition = Camera.main.ScreenToWorldPoint(myTouch.position);
+			if(myTouch.phase == TouchPhase.Began){
+				Collider2D collider = Physics2D.OverlapPoint(MouseWorldPosition);
+				GlobalDownAction(MouseWorldPosition);
+				
+				if (collider != null)
+				{
+					Clickable clickable = collider.GetComponent<Clickable>();
+					if (clickable != null)
+					{
+						clickable.FireEvent(MouseEventType.Down, MouseWorldPosition);
+					}
+				}
+
+			}
+			else if(myTouch.phase == TouchPhase.Ended){
+				Collider2D collider = Physics2D.OverlapPoint(myTouch.position);
+				GlobalUpAction(MouseWorldPosition);
+				
+				if (collider != null)
+				{
+					Clickable clickable = collider.GetComponent<Clickable>();	
+					if (clickable != null)
+					{
+						clickable.FireEvent(MouseEventType.Up, MouseWorldPosition);
+					}
+				}
+			}
+		}else{
+			MouseWorldPosition = -Vector2.one;
+		}
+#endif
 	}
 }
